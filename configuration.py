@@ -2,7 +2,7 @@
 #
 
 # URL del servidor
-URL_API_DOC = "https://df572525-c111-4ba4-bacf-22b7a9a7e80d.serverhub.tripleten-services.com"
+URL_API_DOC = "https://9027cb87-ffde-4682-884b-14e345b272c7.serverhub.tripleten-services.com"
 
 #ENDPOINT para página de documentación de la API
 DOC_PATH = "/docs/"
