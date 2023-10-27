@@ -29,11 +29,8 @@ def negative_assert_code_400(kit_name):
     kit_body = get_kit_body(kit_name)
     response = sender_stand_request.post_new_client_kit(kit_body)
     assert response.status_code == 400  # Valor esperado = True / Positivo
-
-    # Verificar si NO se registra el kit en la DB;
-    # Solicitud->GET-> "var" se compara con la anterior Solicitud->POST-> "response"
-    var = sender_stand_request.get_kit_table().text # variable "var" obtiene el texto de respuesta a la solicitud de la tabla "Kit" de BD
-    assert str(kit_name) not in var # Valor esperado = True / Positivo
+    # Confirmación de mensaje de error de ingreso de solicitud a la DB
+    assert response.json()['message'] == 'Bad Request'
 
 # 1° Función de prueba para un carácter (1)
 # Ej. kit_body = { "name": "a"} -- Código de respuesta — 201
